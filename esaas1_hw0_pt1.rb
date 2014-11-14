@@ -1,16 +1,22 @@
 # ESaaS 1
 # HW 1 Part 1
+# Comments preceding method definitions are the homework problems from the instructors, not my own commentary.
 
+# Define a method sum which takes an array of integers as an argument and returns the sum of its elements. For an empty array it should return zero.
 def sum(array)
   array.empty? ? 0 : array.inject(:+)
 end
 
+# Define a method max_2_sum which takes an array of integers as an argument and returns the sum of its two largest elements.
+# For an empty array it should return zero. For an array with just one element, it should return that element.
 def max_2_sum(array)
   return 0 unless !array.empty?
   return array[0] unless array.length > 1
-  sum(array.sort!.reverse![0..1])  #array.sort!.reverse![0] + array[1]
+  sum(array.sort!.reverse![0..1])  #Originally: array.sort!.reverse![0] + array[1]
 end
 
+# Define a method sum_to_n? which takes an array of integers and an additional integer, n, as arguments and returns true if any two distinct elements 
+# in the array of integers sum to n.  An empty array or single element array should both return false.
 def sum_to_n?(array, n)
   return false if array.length <= 1
   array.combination(2).each {|pair| return true if pair[0] + pair[1] == n}
