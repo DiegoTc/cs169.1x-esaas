@@ -35,7 +35,7 @@ def test_suite
 	raise "binary_multiple_of_4?('10000') != true" unless binary_multiple_of_4?('10000') == true
 	raise "binary_multiple_of_4?('10001') != false" unless binary_multiple_of_4?('10001') == false
 	raise "binary_multiple_of_4?('00') != false" unless binary_multiple_of_4?('00') == false
-	raise "binary_multiple_of_4?('100003') != false" unless binary_multiple_of_4?('10003') == false
+	raise "binary_multiple_of_4?('100003') != false" unless binary_multiple_of_4?('100003') == false
 	puts "All tests pass!"
 end
 
