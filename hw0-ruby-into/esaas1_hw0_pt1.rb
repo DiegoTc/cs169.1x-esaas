@@ -1,5 +1,5 @@
 # ESaaS 1
-# HW 1 Part 1
+# HW 0 Part 1
 # Comments preceding method definitions are the homework problems from the instructors, not my own commentary.
 
 # Define a method sum which takes an array of integers as an argument and returns the sum of its elements. For an empty array it should return zero.

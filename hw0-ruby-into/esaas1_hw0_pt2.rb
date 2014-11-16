@@ -1,5 +1,5 @@
 # ESaaS 1
-# HW 1 Part 2
+# HW 0 Part 2
 # Comments preceding method definitions are the homework problems from the instructors, not my own commentary.
 
 # Define a method hello(name) that takes a string representing a name and returns the string "Hello, " concatenated with the name.

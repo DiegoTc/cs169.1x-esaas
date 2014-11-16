@@ -1,3 +1,7 @@
+# ESaaS 1
+# HW 1 Part 1
+# Comments preceding method definitions are the homework problems from the instructors, not my own commentary.
+
 module FunWithStrings
 
 # A palindrome is a word or phrase that reads the same forwards as backwards, ignoring case, punctuation, and nonword characters.
@@ -21,29 +25,19 @@ module FunWithStrings
 # Given a space separated list of words in a single string, write a method that groups them into anagram groups and returns a nested array of those groups (an array of arrays).
 # Case doesn't matter in classifying string as anagrams (but case should be preserved in the output), and the order of the anagrams in the groups doesn't matter. 
   def anagram_groups
-    words = self.split(" ")
-    result = []
-    words.each do |word|
-      limit = 1
-      for x in 1..word.length
-        limit *= x
+    result = Hash.new
+    self.split(" ").each do |word|
+      letters = word.split(//).sort
+      if result.has_key?(letters)
+        result[letters] << word
+      else
+        result[letters] = [word] 
       end
-      anagrams = []
-      letters = word.split(//)
-      until anagrams.length == limit do
-        candidate = letters.shuffle.join
-        anagrams << candidate unless anagrams.include?(candidate)
-      end
-      result << anagrams
     end
-    result
+    result.values
   end
 end
-
-# make all the above functions available as instance methods on Strings:
 
 class String
   include FunWithStrings
 end
-
-# puts "scream cars for four scar creams".anagram_groups
